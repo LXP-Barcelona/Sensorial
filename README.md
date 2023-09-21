@@ -1,11 +1,9 @@
-# What is it:
-An e-commerce website to sell health products.
+Brand name: Sensorial
 
-# Our product:
-Essential oils
+What is it: An e-commerce website selling health products.
 
-# Our goal:
-Help our customers to feel great in their body.
+Why did we choose this theme: We decided to create an e-commerce website on health products because it’s a modern and accessible solution with a high market demand to take care of diverse customer base
 
-# Why did we choose this theme:
-It's a moderne solution to take care of yourself.
+What product: Essential oils.
+
+Our goal: Help our customer to feel great in their bodies.
