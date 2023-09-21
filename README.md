@@ -2,7 +2,7 @@
 An e-commerce website to sell health products.
 
 # Our product:
-- Essential oils
+Essential oils
 
 # Our goal:
 Help our customers to feel great in their body.
