@@ -7,3 +7,21 @@ footer {
     color: white;
     height: 200px;
 }
+
+.brandFooter{
+    float: left;
+}
+
+.brandFooter >h1{
+    color: #FFF;
+    text-align: center;
+    font-family: Antic Didone;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.contactsFooter{
+    float: right;
+}
