@@ -136,3 +136,16 @@ header {
     height: 130px;
     margin: 0 auto;
 }
+
+/* responsive for the products preview to go from 3 to 2 columns */
+@media (max-width: 1200px) {
+    .productsPreviewContainer {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+/* responsive for the products preview to go from 2 to 1 columns */
+@media screen and (max-width: 768px) {
+    .productsPreviewContainer {
+        grid-template-columns: 1fr;
+    }
+}
