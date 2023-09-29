@@ -61,35 +61,15 @@ header {
     background: radial-gradient(51.46% 51.46% at 50% 41.65%, #E38BE8 0%, #E4E4E4 100%);
 }
 
-.landingSection > h1 {
-    color: #000;
-    text-align: center;
-    font-size: 74px;
-    font-weight: 400;
-    line-height: normal;
-    padding-top: 135px;
+.productPreview {
+    margin: auto;
+    width: 50%;
+    margin-top: 40px;
 }
 
-.landingSection > h2 {
-    color: #000;
-    text-align: center;
-    font-size: 25px;
-    font-weight: 400;
-    line-height: normal;
-
+.productDescription {
+    margin-top: 50px;
 }
-
-.bestSellerTitle {
-    color: #000;
-    text-align: center;
-    font-size: 48px;
-    font-weight: 400;
-    line-height: normal;
-}
-.productsPreviewContainer {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr; 
-    grid-gap: 75px;
-    width: fit-content;
-    margin: 0 auto;
+.productComposition {
+    margin-top: 50px;
 }

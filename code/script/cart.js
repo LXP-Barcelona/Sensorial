@@ -39,3 +39,13 @@ function addProduct(product, amount = 1) {
         title: `you just added\nx${amount} ${product.name} (${(product.price*amount).toFormat()} €)`
     })
 }
+
+
+onclick = async (event) => {
+    if (event.target.id.startsWith("addCart-")) {
+        const id = parseInt(event.target.id.replace(/addCart-/, ''));
+        const product = await findProduct(id);
+        if (product)
+            addProduct(product);
+    }
+}

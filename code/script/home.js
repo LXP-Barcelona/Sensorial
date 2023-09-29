@@ -10,7 +10,7 @@ async function loadPreview() {
     const productsPreviewContainer = document.getElementById("productsPreviewContainer");
     productsPreviewContainer.innerHTML = (await getAllProducts()).slice(0, 6).map(product => {
         return `<div class="productPreview">
-        <div class="productImage">
+        <div class="productImage"  onclick="document.location.href = './product.html?id=${product.id}'">
             <img src="${product.image}" alt="product">
         </div>
         <div class="productCard">
@@ -25,13 +25,4 @@ async function loadPreview() {
         </div>
     </div>`;
     }).join("\n");
-}
-
-onclick = async (event) => {
-    if (event.target.id.startsWith("addCart-")) {
-        const id = parseInt(event.target.id.replace(/addCart-/, ''));
-        const product = await findProduct(id);
-        if (product)
-            addProduct(product);
-    }
 }
