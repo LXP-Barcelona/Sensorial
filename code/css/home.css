@@ -4,6 +4,7 @@ body{
     width:100%;
     padding:0;
     background-color: #E4E4E4;
+    font-family: 'Poppins',sans-serif;
 }
 section{
     height: 100%;
@@ -12,50 +13,6 @@ section{
     padding: 60px;
 }
 
-header {
-    color: black;
-    display: flex;
-    transition: background-color 0.3s ease;
-    background-color: transparent;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 100;
-}
-.scroll {
-    backdrop-filter: blur(5px);
-    background-color: rgba(228, 228, 228, 0.2);
-}
-.left-section {
-    flex: 1;
-    text-align: left;
-}
-
-.left-section > a {
-    cursor: pointer;
-    text-decoration: none;
-    color: black;
-}
-
-.right-section {
-    flex: 1;
-    text-align: right;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin-right: 40px;
-}
-.cart {
-    font-weight: bold;
-    margin-right: 10px;
-}
-.hamburger {
-    font-size: 24px;
-    cursor: pointer;
-}
 
 .landingSection {
     background: radial-gradient(51.46% 51.46% at 50% 41.65%, #E38BE8 0%, #E4E4E4 100%);

@@ -13,20 +13,24 @@ section{
     padding: 60px;
 }
 
-
 .landingSection {
     background: radial-gradient(51.46% 51.46% at 50% 41.65%, #E38BE8 0%, #E4E4E4 100%);
 }
 
-.productPreview {
-    margin: auto;
-    width: 50%;
-    margin-top: 40px;
+.yourProductContainer {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-gap: 75px;
+    width: fit-content;
+    margin: 0 auto;
 }
 
-.productDescription {
-    margin-top: 50px;
+.yourProduct {
+    width: 100%;
+    margin-top: 100px;
 }
-.productComposition {
-    margin-top: 50px;
+
+.productPreview {
+    height: 290px;
 }
