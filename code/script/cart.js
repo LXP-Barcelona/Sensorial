@@ -24,6 +24,7 @@ function clearCart() {
 
 function addProduct(product, amount = 1) {
     const cart = getCartOrCreate();
+    console.log(product)
     const element = cart.find(c => c.id === product.id);
     if (!element)
         cart.push({

@@ -3,26 +3,34 @@ Number.prototype.toFormat = function (number = null) {
 };
 
 window.onload = () => {
-    console.log(getCartOrCreate())
     loadPreview();
 }
 
-function loadPreview() {
-    const productPreviewContainer = document.getElementById("productPreviewContainer");
-    productPreviewContainer.innerHTML = getAllProducts().slice(0, 6).map(product => {
+async function loadPreview() {
+    const productsPreviewContainer = document.getElementById("productsPreviewContainer");
+    productsPreviewContainer.innerHTML = (await getAllProducts()).slice(0, 6).map(product => {
         return `<div class="productPreview">
-        <img src="${product.image}" alt="${product.name}">
-        <h3 class="productTitle">${product.name}</h3>
-        <h3 class="price">${product.price.toFormat()} €</h3>
-        <button class="addCart" id="addCart-${product.id}">Add to cart</button>
+        <div class="productImage">
+            <img src="${product.image}" alt="product">
+        </div>
+        <div class="productCard">
+            <div class="productInfo">
+                <a>${product.name}</a>
+                <br>
+                <strong>${product.price.toFormat()} €</strong>
+            </div>
+            <div class="productCardImage">
+                <img src="./img/cart.png" alt="shopping bag" id="addCart-${product.id}">
+            </div>
+        </div>
     </div>`;
     }).join("\n");
 }
 
-onclick = (event) => {
+onclick = async (event) => {
     if (event.target.id.startsWith("addCart-")) {
         const id = parseInt(event.target.id.replace(/addCart-/, ''));
-        const product = findProduct(id);
+        const product = await findProduct(id);
         if (product)
             addProduct(product);
     }
