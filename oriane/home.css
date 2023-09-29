@@ -1,0 +1,56 @@
+
+
+body{
+    margin: 0;
+    height:100%;
+    width:100%;
+    padding:0;
+    background-color: #E4E4E4;
+}
+
+section{
+    height:100vh;
+    width: 100vw;
+    box-sizing:border-box;
+    padding: 60px;
+}
+
+/* LANDING SECTION */
+.landingSection{
+    background: radial-gradient(51.46% 51.46% at 50% 41.65%, #E38BE8 0%, #E4E4E4 100%);
+}
+
+.landingSection > h1{
+    color: #000;
+    text-align: center;
+    font-size: 74px;
+    font-weight: 400;
+    line-height: normal;
+    padding-top: 135px;
+}
+
+.landingSection > h2{
+    color: #000;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: normal;
+
+}
+
+.bestSellersSection > div > h3{
+    color: #000;
+    text-align: center;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.productPreviewContainer{
+    border-radius: 20px;
+    background: #D9D9D9;
+    width: 350px;
+    height: 400px;
+    float: left;
+    margin: 50px;
+}
