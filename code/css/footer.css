@@ -1,0 +1,43 @@
+footer{
+    background-color: #030317;
+    height: 200px;
+    color: #FFF;
+    text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0;
+    width: 100%;
+    padding: 0;
+}
+
+.brand > h1{
+    font-family: Antic Didone;
+    font-size: 50px;
+    padding-top: 35px;
+    text-align: left;
+    padding-left: 40px;
+}
+
+.contact{
+    padding-top: 35px;
+    padding-left: 420px;
+    text-align: center;
+}
+
+li{
+    text-decoration: none;
+    list-style: none;
+    font-family: Inter;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+.paperwork > a{
+    text-decoration: none;
+    color: #626990;
+}
+
+
