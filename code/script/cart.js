@@ -20,7 +20,7 @@ async function loadCart() {
     yourProduct.innerHTML = myProduct.length > 0 ? `${myProduct.map(product => {
 
         return `<div class="productPreview">
-        <div class="productImage">
+        <div class="productImage" onclick="document.location.href = 'product.html?id=${product.product.id}'">
             <img src="${product.product.image}" alt="product">
         </div>
         <div class="productCard">
