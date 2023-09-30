@@ -7,10 +7,23 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/productCard.css">
     <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="css/loader.css">
     <link rel="stylesheet" href="css/scrollbar.css">
     <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
+    <div class="loader" id="loader">
+        <div class="loaderTitle">
+            <span>SENSORIAL󠇰󠇰</span>
+        </div>
+        <br>
+        <div class="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
     <header>
         <div class="left-section">
             <a href="home.html">
@@ -29,29 +42,7 @@
     <section class="landingSection">
         <div class="yourProduct">
             <h1>Your Products</h1>
-            <div class="yourProductContainer" id="yourProduct">
-
-
-
-                <div class="productPreview">
-                    <div class="productImage">
-                        <img src="https://picsum.photos/200/300" alt="product">
-                    </div>
-                    <div class="productCard">
-                        <div class="productInfo">
-                            <a>x1</a>
-                            <br>
-                            <a>Product Name</a>
-                            <br>
-                            <strong>120 €</strong>
-                        </div>
-                        <div class="productCardImage">
-                            <img src="./img/remove.png" alt="remove icon" id="remove-${product.id}">
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+            <div class="yourProductContainer" id="yourProduct"></div>
         </div>
     </section>
 
@@ -72,7 +63,7 @@
     </footer>
     
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="script/products.js"></script>
+<script src="script/productFunction.js"></script>
 <script src="script/cartFunction.js"></script>
 <script src="script/cart.js"></script>
 </body>

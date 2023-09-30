@@ -1,7 +1,3 @@
-Number.prototype.toFormat = function (number = null) {
-    return `${(number ? number : this).toFixed(0).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, " ")}`;
-};
-
 onload = () => {
     loadCart();
 };
@@ -40,4 +36,8 @@ async function loadCart() {
 
 
     }).join("\n")}`;
+    const loader = document.getElementById("loader");
+    setTimeout(() => {
+        loader.classList.add("hiddenLoader");
+    }, 250)
 }

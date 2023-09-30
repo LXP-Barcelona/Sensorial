@@ -1,11 +1,65 @@
-function getAllProducts() {
-    return new Promise((resolve) => {
-        fetch("https://lxp-barcelona.github.io/Data/db.json").then(async r => {
-            resolve(await r.json());
-        })
+let products = [];
+
+onload = () => {
+    loadProducts()
+}
+
+function loadProducts() {
+    getAllProducts().then(productList => {
+        products = productList;
+
+        const categoryList = document.getElementById('categoryList');
+        const uniqueCategories = [...new Set(products.map(product => product.category))];
+        categoryList.innerHTML = uniqueCategories.map(category => {
+            return `<button id="category.${category.replace(/ /g, '-')}">${category}</button>`
+        }).join("\n");
+
+        showProducts();
+
+        const loader = document.getElementById("loader");
+        setTimeout(() => {
+            loader.classList.add("hiddenLoader");
+        }, 250)
     })
 }
 
-async function findProduct(idOrName) {
-    return (await getAllProducts()).find(p => (typeof idOrName === "number" ? p.id : p.name) === idOrName );
+
+function showProducts(category = null) {
+    const productsPreviewContainer = document.getElementById("productsPreviewContainer");
+    productsPreviewContainer.innerHTML = products.filter(p => category ? p.category === category : true).map(product => {
+        return `<div class="productPreview">
+        <div class="productImage"  onclick="document.location.href = 'product.html?id=${product.id}'">
+            <img src="${product.image}" alt="product">
+        </div>
+        <div class="productCard">
+            <div class="productInfo">
+                <a>${product.name}</a>
+                <br>
+                <strong>${product.price.toFormat()} €</strong>
+            </div>
+            <div class="productCardImage">
+                <img src="./img/cart.png" alt="shopping bag" id="addCart-${product.id}">
+            </div>
+        </div>
+    </div>`;
+    }).join("\n");
+
+}
+
+let lastActive = null;
+
+onclick = async (event) => {
+    if (event.target.id.startsWith("category.")) {
+        const category = event.target.id.replace(/category./, '').replace(/-/, ' ');
+        if (lastActive && event.target === lastActive) {
+            lastActive.classList.remove('active');
+            lastActive = null;
+            return showProducts();
+        }
+        showProducts(category);
+        if (lastActive)
+            lastActive.classList.remove('active');
+        event.target.classList.add('active');
+        lastActive = event.target;
+    }
 }

@@ -1,6 +1,3 @@
-Number.prototype.toFormat = function (number = null) {
-    return `${(number ? number : this).toFixed(0).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, " ")}`;
-};
 
 onload = async () => {
     const queryString = window.location.search;
