@@ -1,9 +1,10 @@
 const Toast = Swal.mixin({
     toast: true,
-    position: 'top-end',
+    position: 'bottom-start',
     showConfirmButton: false,
     timer: 3000,
-    timerProgressBar: true
+    timerProgressBar: true,
+    customClass: 'toast-custom'
 })
 
 function getCartOrCreate() {
@@ -22,13 +23,22 @@ function clearCart() {
     localStorage.removeItem("cart");
 }
 
-function removeProduct(productId) {
-    
+async function removeProduct(productId) {
+    const cart = getCartOrCreate();
+    setCart(cart.filter(c => c.id !== productId));
+    const products = await getAllProducts();
+    const product = {
+        product: products.find(p => p.id === productId),
+        amount: cart.find(p => p.id === productId)?.amount ?? 0
+    };
+    Toast.fire({
+        icon: 'success',
+        title: `you just removed\nx${product.amount} ${product.product.name} (${(product.product.price*product.amount).toFormat()} €)`
+    })
 }
 
 function addProduct(product, amount = 1) {
     const cart = getCartOrCreate();
-    console.log(product)
     const element = cart.find(c => c.id === product.id);
     if (!element)
         cart.push({

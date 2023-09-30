@@ -13,8 +13,11 @@ async function loadCart() {
         }
     });
     const yourProduct = document.getElementById("yourProduct");
+    const totalPrice = myProduct.reduce((total, item) => total + (item.product.price * item.amount), 0);
+    const amountTotal = document.getElementById('amountTotal');
+    amountTotal.innerHTML = `${totalPrice.toFormat()} €`;
 
-    yourProduct.innerHTML = `${myProduct.map(product => {
+    yourProduct.innerHTML = myProduct.length > 0 ? `${myProduct.map(product => {
 
         return `<div class="productPreview">
         <div class="productImage">
@@ -35,9 +38,17 @@ async function loadCart() {
     </div>`
 
 
-    }).join("\n")}`;
+    }).join("\n")}` : `Your cart does not contain any items.`;
     const loader = document.getElementById("loader");
     setTimeout(() => {
         loader.classList.add("hiddenLoader");
     }, 250)
+}
+
+onclick = async (event) => {
+    if (event.target.id.startsWith("remove-")) {
+        const id = parseInt(event.target.id.replace(/remove-/, ''));
+        removeProduct(id);
+        loadCart()
+    }
 }

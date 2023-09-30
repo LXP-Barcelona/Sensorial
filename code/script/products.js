@@ -61,5 +61,10 @@ onclick = async (event) => {
             lastActive.classList.remove('active');
         event.target.classList.add('active');
         lastActive = event.target;
+    }else if (event.target.id.startsWith("addCart-")) {
+        const id = parseInt(event.target.id.replace(/addCart-/, ''));
+        const product = await findProduct(id);
+        if (product)
+            addProduct(product);
     }
 }
