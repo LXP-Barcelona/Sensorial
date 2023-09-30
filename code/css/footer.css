@@ -2,7 +2,6 @@ footer{
     background-color: #030317;
     height: 200px;
     color: #FFF;
-    text-align: center;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -35,9 +34,15 @@ li{
     line-height: 20px;
 }
 
+.paperwork{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 170px;
+}
+
 .paperwork > a{
     text-decoration: none;
     color: #626990;
+    margin: 10px;
 }
-
-
