@@ -10,7 +10,7 @@ async function loadPreview() {
     const productsPreviewContainer = document.getElementById("productsPreviewContainer");
     productsPreviewContainer.innerHTML = (await getAllProducts()).slice(0, 6).map(product => {
         return `<div class="productPreview">
-        <div class="productImage"  onclick="document.location.href = './product.html?id=${product.id}'">
+        <div class="productImage"  onclick="document.location.href = 'product.html?id=${product.id}'">
             <img src="${product.image}" alt="product">
         </div>
         <div class="productCard">

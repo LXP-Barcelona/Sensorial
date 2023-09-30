@@ -6,13 +6,13 @@ onload = async () => {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     if (!urlParams.has("id"))
-        return document.location.href = './home.html';
+        return document.location.href = 'home.html';
 
     try {
         const id = parseInt(urlParams.get('id'));
         const product = await findProduct(id);
         if (!product)
-            return document.location.href = './home.html';
+            return document.location.href = 'home.html';
         
         const productImage = document.getElementById("productImage");
         productImage.src = product.image;
@@ -38,6 +38,6 @@ onload = async () => {
             loader.classList.add("hiddenLoader");
         }, 250)
     }catch (_) {
-        document.location.href = './home.html';
+        document.location.href = 'home.html';
     }
 }
