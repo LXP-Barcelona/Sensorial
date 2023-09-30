@@ -23,34 +23,66 @@ function clearCart() {
     localStorage.removeItem("cart");
 }
 
-async function removeProduct(productId) {
-    const cart = getCartOrCreate();
-    setCart(cart.filter(c => c.id !== productId));
-    const products = await getAllProducts();
-    const product = {
-        product: products.find(p => p.id === productId),
-        amount: cart.find(p => p.id === productId)?.amount ?? 0
-    };
-    Toast.fire({
-        icon: 'success',
-        title: `you just removed\nx${product.amount} ${product.product.name} (${(product.product.price*product.amount).toFormat()} €)`
+function askAmount(title, label, min = 1, max = 1) {
+    return new Promise((resolve) => {
+        Swal.fire({
+            title,
+            icon: 'question',
+            input: 'range',
+            inputLabel: label,
+            inputAttributes: {
+              min,
+              max,
+              step: 1
+            },
+            inputValue: 1
+          }).then(result => {
+            if (result.isConfirmed)
+                resolve(parseInt(result.value));
+          })
     })
 }
 
-function addProduct(product, amount = 1) {
-    const cart = getCartOrCreate();
-    const element = cart.find(c => c.id === product.id);
-    if (!element)
-        cart.push({
-            id: product.id,
-            amount: amount
+function removeProduct(productId) {
+    return new Promise(async resolve => {
+        const cart = getCartOrCreate();
+        const products = await getAllProducts();
+        const product = {
+            product: products.find(p => p.id === productId),
+            amount: cart.find(p => p.id === productId)?.amount ?? 0
+        };
+        askAmount(`${product.product.name} (x${product.amount} ${product.product.price.toFormat()} €)`, "Select the desired quantity", 1, product.amount).then(amount => {
+            if (amount === product.amount)
+                setCart(cart.filter(c => c.id !== productId));
+            else {
+                cart.find(p => p.id === productId).amount -= amount;
+                setCart(cart);
+            }
+            Toast.fire({
+                icon: 'success',
+                title: `you just removed\nx${amount} ${product.product.name} (${(product.product.price*amount).toFormat()} €)`
+            });
+            resolve();
         })
-    else
-        element.amount += amount;
-    setCart(cart);
-    Toast.fire({
-        icon: 'success',
-        title: `you just added\nx${amount} ${product.name} (${(product.price*amount).toFormat()} €)`
+    })
+}
+
+function addProduct(product) {
+    askAmount(`${product.name} (${product.price.toFormat()} €)`, "Select the desired quantity", 1, 10).then(amount => {
+        const cart = getCartOrCreate();
+        const element = cart.find(c => c.id === product.id);
+        if (!element)
+            cart.push({
+                id: product.id,
+                amount: amount
+            })
+        else
+            element.amount += amount;
+        setCart(cart);
+        Toast.fire({
+            icon: 'success',
+            title: `you just added\nx${amount} ${product.name} (${(product.price*amount).toFormat()} €)`
+        })
     })
 }
 

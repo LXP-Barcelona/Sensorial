@@ -48,7 +48,6 @@ async function loadCart() {
 onclick = async (event) => {
     if (event.target.id.startsWith("remove-")) {
         const id = parseInt(event.target.id.replace(/remove-/, ''));
-        removeProduct(id);
-        loadCart()
+        removeProduct(id).then(() => loadCart())
     }
 }
