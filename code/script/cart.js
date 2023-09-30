@@ -1,41 +1,43 @@
-const Toast = Swal.mixin({
-    toast: true,
-    position: 'top-end',
-    showConfirmButton: false,
-    timer: 3000,
-    timerProgressBar: true
-})
+Number.prototype.toFormat = function (number = null) {
+    return `${(number ? number : this).toFixed(0).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, " ")}`;
+};
 
-function getCartOrCreate() {
-    let cart = localStorage.getItem("cart");
-    if (!cart)
-        localStorage.setItem("cart", JSON.stringify([]));
-    cart = localStorage.getItem("cart");
-    return JSON.parse(cart);
-}
+onload = () => {
+    loadCart();
+};
 
-function setCart(cart) {
-    localStorage.setItem("cart", JSON.stringify(cart));
-}
 
-function clearCart() {
-    localStorage.removeItem("cart");
-}
-
-function addProduct(product, amount = 1) {
+async function loadCart() {
+    const products = await getAllProducts();
     const cart = getCartOrCreate();
-    console.log(product)
-    const element = cart.find(c => c.id === product.id);
-    if (!element)
-        cart.push({
-            id: product.id,
-            amount: amount
-        })
-    else
-        element.amount += amount;
-    setCart(cart);
-    Toast.fire({
-        icon: 'success',
-        title: `you just added\nx${amount} ${product.name} (${(product.price*amount).toFormat()} €)`
-    })
+    const myProduct = cart.map(c => {
+        return {
+            product: products.find(p => p.id === c.id),
+            amount: c.amount
+        }
+    });
+    const yourProduct = document.getElementById("yourProduct");
+
+    yourProduct.innerHTML = `${myProduct.map(product => {
+
+        return `<div class="productPreview">
+        <div class="productImage">
+            <img src="${product.product.image}" alt="product">
+        </div>
+        <div class="productCard">
+            <div class="productInfo">
+                <a>x${product.amount}</a>
+                <br>
+                <a>${product.product.name}</a>
+                <br>
+                <strong>${product.product.price.toFormat()} €</strong>
+            </div>
+            <div class="productCardImage">
+                <img src="./img/remove.png" alt="remove icon" id="remove-${product.product.id}">
+            </div>
+        </div>
+    </div>`
+
+
+    }).join("\n")}`;
 }

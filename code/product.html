@@ -4,29 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product</title>
+    <link rel="stylesheet" href="css/product.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/productCard.css">
+    <link rel="stylesheet" href="css/scrollbar.css">
+    <link rel="stylesheet" href="css/loader.css">
 </head>
 <body>
-    <header></header>
-    <section>
-        <div class="productViewContainer">
-            <img class="productView" src="" alt="">
+    <div class="loader" id="loader">
+        <div class="loaderTitle">
+            <span>SENSORIAL󠇰󠇰</span>
         </div>
-        <h3 class="productTitle"></h3>
-        <div class="buttonContainer">
-            <button class="cartButton"></button>
+        <br>
+        <div class="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
-    </section>
-    <section>
-        <p class="description"></p>
-        <h3 class="componentsTitle"></h3>
-        <p class="components"></p>
-    </section>
-    <section>
-        <h2 class="reviewTitle"></h2>
-        
+    </div>
+
+    <header>
+        <div class="left-section">
+            <a href="./home.html">
+                SENSORIAL
+            </a>
+        </div>
+        <div class="right-section">
+            <div class="cart"><a href="./cart.html">CART</a></div>
+            <div class="hamburger">
+                &#9776;
+            </div>
+        </div>
+    </header>
+
+     <!--LANDING SECTION-->
+     <section class="landingSection">
+        <div class="productPreview">
+            <div class="productImage">
+                <img id="productImage" src="" alt="product">
+            </div>
+            <div class="productCard">
+                <div class="productInfo">
+                    <a id="productName"></a>
+                    <br>
+                    <strong id="productPrice"></strong>
+                </div>
+                <div class="productCardImage">
+                    <img src="./img/cart.png" alt="shopping bag" id="addCart-">
+                </div>
+            </div>
+        </div>
+        <div class="productDescription">
+            <h1>Product's Description</h1>
+            <p id="productDescription"></p>
+        </div>
+        <div class="productComposition">
+            <h1>Composition</h1>
+            <p id="productComposition"></p>
+        </div>
     </section>
 
-    
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="script/products.js"></script>
+<script src="script/product.js"></script>
+<script src="script/cartFunction.js"></script>
 </body>
 </html>

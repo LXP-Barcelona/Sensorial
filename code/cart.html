@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/productCard.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="css/scrollbar.css">
+</head>
+<body>
+    <header>
+        <div class="left-section">
+            <a href="./home.html">
+                SENSORIAL
+            </a>
+        </div>
+        <div class="right-section">
+            <div class="cart"><a href="#">CART</a></div>
+            <div class="hamburger">
+                &#9776;
+            </div>
+        </div>
+    </header>
+
+    <!--LANDING SECTION-->
+    <section class="landingSection">
+        <div class="yourProduct">
+            <h1>Your Products</h1>
+            <div class="yourProductContainer" id="yourProduct">
+
+
+
+                <div class="productPreview">
+                    <div class="productImage">
+                        <img src="https://picsum.photos/200/300" alt="product">
+                    </div>
+                    <div class="productCard">
+                        <div class="productInfo">
+                            <a>x1</a>
+                            <br>
+                            <a>Product Name</a>
+                            <br>
+                            <strong>120 €</strong>
+                        </div>
+                        <div class="productCardImage">
+                            <img src="./img/remove.png" alt="remove icon" id="remove-${product.id}">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="script/products.js"></script>
+<script src="script/cartFunction.js"></script>
+<script src="script/cart.js"></script>
+</body>
+</html>

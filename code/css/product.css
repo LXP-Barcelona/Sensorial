@@ -1,0 +1,32 @@
+body{
+    margin: 0;
+    height:100%;
+    width:100%;
+    padding:0;
+    background-color: #E4E4E4;
+    font-family: 'Poppins',sans-serif;
+}
+section{
+    height: 100%;
+    width: 100%;
+    box-sizing:border-box;
+    padding: 60px;
+}
+
+
+.landingSection {
+    background: radial-gradient(51.46% 51.46% at 50% 41.65%, #E38BE8 0%, #E4E4E4 100%);
+}
+
+.productPreview {
+    margin: auto;
+    width: 50%;
+    margin-top: 40px;
+}
+
+.productDescription {
+    margin-top: 50px;
+}
+.productComposition {
+    margin-top: 50px;
+}

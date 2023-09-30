@@ -1,0 +1,63 @@
+
+.productPreview {
+    background: #D9D9D9;
+    width: 252px;
+    height: 270px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    box-shadow:  20px 20px 60px #bebebe,
+                -20px -20px 60px #ffffff;
+}
+
+.productPreview:hover {
+    transform: scale(1.04);
+}
+
+.productInfo {
+    flex: 1; 
+    padding-left: 25px;
+}
+
+.productCardImage {
+    flex: 0; 
+}
+.productCardImage > img {
+    width: 26px;
+    height: 26px;
+    padding-right: 25px;
+}
+
+.productCard {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+}
+
+.productInfo > a {
+    margin-right: 10px;
+}
+
+.productImage {
+    text-align: center;
+    padding-top: 49px;
+}
+
+.productImage > img {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+}
+
+/* responsive for the products preview to go from 3 to 2 columns */
+@media (max-width: 1200px) {
+    .productsPreviewContainer {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+/* responsive for the products preview to go from 2 to 1 columns */
+@media screen and (max-width: 768px) {
+    .productsPreviewContainer {
+        grid-template-columns: 1fr;
+    }
+}
