@@ -6,20 +6,17 @@ onload = () => {
 async function loadCart() {
     const products = await getAllProducts();
     const cart = getCartOrCreate();
-    const myProduct = cart.map(c => {
-        return {
-            product: products.find(p => p.id === c.id),
-            amount: c.amount
-        }
-    });
+    const myProduct = cart.map(c => ({
+        product: products.find(p => p.id === c.id),
+        amount: c.amount
+    }));
     const yourProduct = document.getElementById("yourProduct");
     const totalPrice = myProduct.reduce((total, item) => total + (item.product.price * item.amount), 0);
     const amountTotal = document.getElementById('amountTotal');
     amountTotal.innerHTML = `${totalPrice.toFormat()} €`;
 
-    yourProduct.innerHTML = myProduct.length > 0 ? `${myProduct.map(product => {
-
-        return `<div class="productPreview">
+    yourProduct.innerHTML = myProduct.length > 0 ? `${myProduct.map(product => (
+    `<div class="productPreview">
         <div class="productImage" onclick="document.location.href = 'product.html?id=${product.product.id}'">
             <img src="${product.product.image}" alt="product">
         </div>
@@ -36,9 +33,7 @@ async function loadCart() {
             </div>
         </div>
     </div>`
-
-
-    }).join("\n")}` : `Your cart does not contain any items.`;
+)).join("\n")}` : `Your cart does not contain any items.`;
     const loader = document.getElementById("loader");
     setTimeout(() => {
         loader.classList.add("hiddenLoader");

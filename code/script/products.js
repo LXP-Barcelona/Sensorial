@@ -10,9 +10,9 @@ function loadProducts() {
 
         const categoryList = document.getElementById('categoryList');
         const uniqueCategories = [...new Set(products.map(product => product.category))];
-        categoryList.innerHTML = uniqueCategories.map(category => {
-            return `<button id="category.${category.replace(/ /g, '-')}">${category}</button>`
-        }).join("\n");
+        categoryList.innerHTML = uniqueCategories.map(category => (
+            `<button id="category.${category.replace(/ /g, '-')}">${category}</button>`
+        )).join("\n");
 
         showProducts();
 
@@ -26,8 +26,8 @@ function loadProducts() {
 
 function showProducts(category = null) {
     const productsPreviewContainer = document.getElementById("productsPreviewContainer");
-    productsPreviewContainer.innerHTML = products.filter(p => category ? p.category === category : true).map(product => {
-        return `<div class="productPreview">
+    productsPreviewContainer.innerHTML = products.filter(p => category ? p.category === category : true).map(product => (
+        `<div class="productPreview">
         <div class="productImage"  onclick="document.location.href = 'product.html?id=${product.id}'">
             <img src="${product.image}" alt="product">
         </div>
@@ -41,8 +41,8 @@ function showProducts(category = null) {
                 <img src="./img/cart.png" alt="shopping bag" id="addCart-${product.id}">
             </div>
         </div>
-    </div>`;
-    }).join("\n");
+    </div>`
+    )).join("\n");
 
 }
 
