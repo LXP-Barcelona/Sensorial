@@ -13,6 +13,10 @@ section{
     padding: 60px;
 }
 
+
+
+/*LANDING SECTION*/
+
 .landingSection {
     background: radial-gradient(51.46% 51.46% at 50% 41.65%, #BA7CD0 0%, #E4E4E4 100%);
 }
@@ -35,6 +39,9 @@ section{
 
 }
 
+
+/*OUR BESTSELLERS SECTION*/
+
 .bestSellerTitle {
     color: #000;
     text-align: center;
@@ -49,7 +56,6 @@ section{
     width: fit-content;
     margin: 0 auto;
 }
-
 .productPreview {
     background: #D9D9D9;
     width: 252px;
@@ -60,16 +66,15 @@ section{
     box-shadow:  20px 20px 60px #bebebe,
                 -20px -20px 60px #ffffff;
 }
-
 .productPreview:hover {
     transform: scale(1.04);
 }
 
+    /*PRODUCTS SPECIFIC*/
 .productInfo {
     flex: 1; 
     padding-left: 25px;
 }
-
 .productCardImage {
     flex: 0; 
 }
@@ -78,27 +83,26 @@ section{
     height: 26px;
     padding-right: 25px;
 }
-
 .productCard {
     display: flex;
     justify-content: space-between;
     padding-top: 15px;
 }
-
 .productInfo > a {
     margin-right: 10px;
 }
-
 .productImage {
     text-align: center;
     padding-top: 49px;
 }
-
 .productImage > img {
     width: 130px;
     height: 130px;
     margin: 0 auto;
 }
+
+
+/*RESPONSIVE*/
 
 /* responsive for the products preview to go from 3 to 2 columns */
 @media (max-width: 1200px) {
