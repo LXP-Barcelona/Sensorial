@@ -13,13 +13,11 @@ function loadProducts() {
         categoryList.innerHTML = uniqueCategories.map(category => (
             `<button id="category.${category.replace(/ /g, '-')}">${category}</button>`
         )).join("\n");
-
         showProducts();
-
         const loader = document.getElementById("loader");
         setTimeout(() => {
             loader.classList.add("hiddenLoader");
-        }, 250)
+        }, 250);
     })
 }
 

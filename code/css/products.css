@@ -13,8 +13,12 @@ section {
     padding: 60px;
 }
 
+
+
+
+
 .landingSection {
-    background: radial-gradient(51.46% 51.46% at 50% 41.65%, #E38BE8 0%, #E4E4E4 100%);
+    background: radial-gradient(51.46% 51.46% at 50% 41.65%, #BA7CD0 0%, #E4E4E4 100%);
 }
 
 .landingSection > h1 {
@@ -34,7 +38,7 @@ section {
 .categoryList > button {
   align-items: center;
   appearance: none;
-  background-image: radial-gradient(100% 100% at 100% 0, #E38BE8 0, #de4de6 100%);
+  background-image: radial-gradient(100% 100% at 100% 0, #BA7CD0 0, #a16bb4 100%);
   border: 0;
   border-radius: 6px;
   box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
@@ -65,17 +69,17 @@ section {
 
 
 .categoryList .active {
-    box-shadow: #c825d0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #c825d0 0 -3px 0 inset;
+    box-shadow: #7c4c8c 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #7c4c8c 0 -3px 0 inset;
     transform: translateY(-10px);
 }
 
 .categoryList > button:hover {
-  box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #c825d0 0 -3px 0 inset;
+  box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #7c4c8c 0 -3px 0 inset;
   transform: translateY(-2px);
 }
 
 .categoryList > button:active {
-  box-shadow: #c825d0 0 3px 7px inset;
+  box-shadow: #7c4c8c 0 3px 7px inset;
   transform: translateY(2px);
 }   
 
@@ -99,8 +103,7 @@ section {
     border-radius: 20px;
     cursor: pointer;
     transition: all 0.3s ease-out;
-    box-shadow:  20px 20px 60px #bebebe,
-                -20px -20px 60px #ffffff;
+    box-shadow: 10px 10px 60px #9375a0 !important;
 }
 
 .productPreview:hover {

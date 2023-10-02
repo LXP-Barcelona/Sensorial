@@ -6,8 +6,7 @@
     border-radius: 20px;
     cursor: pointer;
     transition: all 0.3s ease-out;
-    box-shadow:  20px 20px 60px #bebebe,
-                -20px -20px 60px #ffffff;
+    box-shadow: 20px 20px 60px #9375a0;
 }
 
 .productPreview:hover {

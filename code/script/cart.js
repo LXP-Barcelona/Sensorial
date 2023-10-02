@@ -33,7 +33,7 @@ async function loadCart() {
             </div>
         </div>
     </div>`
-)).join("\n")}` : `Your cart does not contain any items.`;
+    )).join("\n")}` : `Your cart does not contain any items.`;
     const loader = document.getElementById("loader");
     setTimeout(() => {
         loader.classList.add("hiddenLoader");
