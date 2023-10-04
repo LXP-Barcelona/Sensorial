@@ -1,10 +1,11 @@
 let products = [];
 
 onload = () => {
+    loadLang();
     loadProducts()
 }
 
-function loadProducts() {
+async function loadProducts() {
     getAllProducts().then(productList => {
         products = productList;
 

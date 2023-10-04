@@ -1,4 +1,5 @@
 onload = () => {
+    loadLang();
     loadCart();
 };
 
@@ -33,7 +34,7 @@ async function loadCart() {
             </div>
         </div>
     </div>`
-    )).join("\n")}` : `Your cart does not contain any items.`;
+    )).join("\n")}` : translate("cart-empty");
     const loader = document.getElementById("loader");
     setTimeout(() => {
         loader.classList.add("hiddenLoader");

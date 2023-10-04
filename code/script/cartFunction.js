@@ -51,7 +51,7 @@ function removeProduct(productId) {
             product: products.find(p => p.id === productId),
             amount: cart.find(p => p.id === productId)?.amount ?? 0
         };
-        askAmount(`${product.product.name} (x${product.amount} ${product.product.price.toFormat()} €)`, "Select the desired quantity", 1, product.amount).then(amount => {
+        askAmount(`${product.product.name} (x${product.amount} ${product.product.price.toFormat()} €)`, translate("cart-askAmount"), 1, product.amount).then(amount => {
             if (amount === product.amount)
                 setCart(cart.filter(c => c.id !== productId));
             else {
@@ -60,7 +60,7 @@ function removeProduct(productId) {
             }
             Toast.fire({
                 icon: 'success',
-                title: `you just removed\nx${amount} ${product.product.name} (${(product.product.price*amount).toFormat()} €)`
+                title: `${translate("cart-remove")}\nx${amount} ${product.product.name} (${(product.product.price*amount).toFormat()} €)`
             });
             resolve();
         })
@@ -68,7 +68,7 @@ function removeProduct(productId) {
 }
 
 function addProduct(product) {
-    askAmount(`${product.name} (${product.price.toFormat()} €)`, "Select the desired quantity", 1, 10).then(amount => {
+    askAmount(`${product.name} (${product.price.toFormat()} €)`, translate("cart-askAmount"), 1, 10).then(amount => {
         const cart = getCartOrCreate();
         const element = cart.find(c => c.id === product.id);
         if (!element)
@@ -81,7 +81,7 @@ function addProduct(product) {
         setCart(cart);
         Toast.fire({
             icon: 'success',
-            title: `you just added\nx${amount} ${product.name} (${(product.price*amount).toFormat()} €)`
+            title: `${translate("cart-add")}\nx${amount} ${product.name} (${(product.price*amount).toFormat()} €)`
         })
     })
 }

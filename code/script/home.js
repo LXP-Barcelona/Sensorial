@@ -1,5 +1,10 @@
 window.onload = () => {
+    loadLang();
     loadPreview();
+    const loader = document.getElementById("loader");
+    setTimeout(() => {
+        loader.classList.add("hiddenLoader");
+    }, 250)
 }
 
 async function loadPreview() {

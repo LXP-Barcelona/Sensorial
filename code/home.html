@@ -9,26 +9,34 @@
     <link rel="stylesheet" href="css/productCard.css">
     <link rel="stylesheet" href="css/scrollbar.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/loader.css">
 </head>
 <body>
-
+    <!--LOADER-->
+    <div class="loader" id="loader">
+        <div class="loaderTitle">
+            <span>SENSORIAL󠇰󠇰</span>
+        </div>
+        <br>
+        <div class="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
     <!--HEADER-->
     <header></header>
 
     <!--LANDING SECTION-->
     <section class="landingSection">
-        <h1>Catch Phrase</h1>
-        <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h2>
-    </section>
-
-    <!--AR ADVERTISING SECTION-->
-    <section>
-
+        <h1 translate="home-title"></h1>
+        <h2 translate="home-description"></h2>
     </section>
 
     <!--OUR BESTSELLERS-->
     <section>
-        <h3 class="bestSellerTitle">Our Best Sellers</h3>
+        <h3 translate="home-bestSeller" class="bestSellerTitle"></h3>
         <div class="productsPreviewContainer" id="productsPreviewContainer"></div>
     </section>
 
@@ -38,13 +46,13 @@
 
 
     <!--SCRIPTS-->
+<script src="script/lang.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="script/productFunction.js"></script>
 <script src="script/cartFunction.js"></script>
 <script src="script/home.js"></script>
 <script src="script/header.js"></script>
 <script src="script/footer.js"></script>
-<script src="script/headerTemplate.js"></script>
 
 </body>
 </html>
