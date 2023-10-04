@@ -45,6 +45,12 @@ header {
     text-decoration: none;
 }
 
+.lang {
+    cursor: pointer;
+    font-weight: bold;
+    margin-right: 40px;
+    text-transform: uppercase;
+}
 
 .products {
     cursor: pointer;

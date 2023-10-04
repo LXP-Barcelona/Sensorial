@@ -1,5 +1,8 @@
 const langs = {
     en: {
+        "name": "English",
+        "change-lang": "You can choose another language",
+
         "home-title": "Catch phrase",
         "home-description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
         "home-bestSeller": "Our Best Sellers",
@@ -18,6 +21,9 @@ const langs = {
         "header-cart": "CART"
     },
     fr: {
+        "name": "Français",
+        "change-lang": "Vous pouvez choisir une autre langue",
+
         "home-title": "Phrase d'accroche",
         "home-description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
         "home-bestSeller": "Nos Meilleures Ventes",
@@ -34,6 +40,26 @@ const langs = {
         "products-products": "Produits",
         "header-products": "PRODUITS",
         "header-cart": "PANIER"
+    },
+    es: {
+        "name": "Español",
+        "change-lang": "Puedes elegir otro idioma",
+        "home-title": "Frase de presentación",
+        "home-description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "home-bestSeller": "Nuestros Mejores Vendedores",
+        "cart-remove": "Has eliminado",
+        "cart-add": "Has añadido",
+        "cart-askAmount": "Selecciona la cantidad deseada",
+        "cart-empty": "Tu carrito no contiene ningún artículo.",
+        "cart-total": "TOTAL",
+        "cart-buy": "COMPRAR &gt;",
+        "cart-yourProduct": "Tus Productos",
+        "product-description": "Descripción del Producto",
+        "product-composition": "Composición",
+        "product-reviews": "Opiniones",
+        "products-products": "Productos",
+        "header-products": "PRODUCTOS",
+        "header-cart": "CARRITO"
     }    
 };
 
@@ -63,3 +89,36 @@ function getLang() {
         lang = localStorage.getItem("lang");
     return lang;
 }
+
+
+window.addEventListener("click", (event) => {
+    const transformedLangs = Object.keys(langs).reduce((acc, key) => ({ ...acc, [key]: langs[key].name }), {});
+    if (event.target.id === "change-lang") {
+        Swal.fire({
+            title: translate("change-lang"),
+            input: 'select',
+            inputOptions: transformedLangs,
+            inputValue: getLang(),
+            didOpen: () => {
+              Swal.getInput().addEventListener('change', () => {
+                localStorage.setItem("lang", Swal.getInput().value);
+                Swal.getTitle().innerText = translate("change-lang");
+              })
+            },
+            allowOutsideClick: () => {
+                const popup = Swal.getPopup()
+                popup.classList.remove('swal2-show')
+                setTimeout(() => {
+                  popup.classList.add('animate__animated', 'animate__headShake')
+                })
+                setTimeout(() => {
+                  popup.classList.remove('animate__animated', 'animate__headShake')
+                }, 500)
+                return false;
+              }
+          }).then(result => {
+            if (result.isConfirmed)
+                document.location.reload();
+          })
+    }
+})

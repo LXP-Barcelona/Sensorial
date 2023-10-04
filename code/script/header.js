@@ -14,6 +14,7 @@ headerElement.innerHTML = `<div class="left-section">
     </a>
     </div>
     <div class="right-section">
+    <div class="lang" id="change-lang">${translate("name")}</div>
     <div class="products"><a href="products.html">${translate("header-products")}</a></div>
     <div class="cart"><a href="cart.html">${translate("header-cart")}</a></div>
     </div>`
