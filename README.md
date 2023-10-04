@@ -7,3 +7,11 @@ Why did we choose this theme: We decided to create an e-commerce website on heal
 What product: Essential oils.
 
 Our goal: Help our customer to feel great in their bodies.
+
+<br>
+<br>
+
+Link to the Wireframe:
+```bash
+https://www.figma.com/file/6eIsEeBOjoZQ7QGg1odOV5/Sensorial?type=design&node-id=0%3A1&mode=design&t=FqN8KX7RRHnCQifh-1
+```
