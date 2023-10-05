@@ -51,6 +51,16 @@ function removeProduct(productId) {
             product: products.find(p => p.id === productId),
             amount: cart.find(p => p.id === productId)?.amount ?? 0
         };
+
+        if (product.amount === 1) {
+            setCart(cart.filter(c => c.id !== productId));
+            Toast.fire({
+                icon: 'success',
+                title: `${translate("cart-remove")}\nx1 ${product.product.name} (${(product.product.price).toFormat()} €)`
+            });
+            return resolve();
+        }
+        
         askAmount(`${product.product.name} (x${product.amount} ${product.product.price.toFormat()} €)`, translate("cart-askAmount"), 1, product.amount).then(amount => {
             if (amount === product.amount)
                 setCart(cart.filter(c => c.id !== productId));
