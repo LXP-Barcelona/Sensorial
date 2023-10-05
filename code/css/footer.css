@@ -25,6 +25,7 @@ footer{
     padding-top: 35px;
     text-align: center;
     align-items: center;
+    margin-left: 30%;
 }
 
 li{
@@ -46,4 +47,54 @@ li{
     text-decoration: none;
     color: #626990;
     margin: 10px;
+}
+
+
+
+/* responsive for the footer to move vertically everything */
+@media screen and (max-width: 1000px){
+    footer{
+        display: grid;
+        grid-template-columns: 1fr;
+        height: 350px;
+    }
+
+    .brand > h1{
+        font-family: Antic Didone;
+        font-size: 50px;
+        padding-top: 35px;
+        text-align: center;
+        padding-left: 0px;
+    }
+
+    .contact{
+        padding-top: 35px;
+        text-align: center;
+        align-items: center;
+        padding-left: 0%;
+        margin-left: 0%;
+    }
+
+    .contact > ul{
+        padding-left: 0px;
+    }
+
+    .contact > h2{
+        padding-left: 0px;
+    }
+
+    .paperwork{
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin-top: 170px;
+    }
+}
+
+/* responsive for the paperwork to move vertically */
+@media screen and (max-width: 485){
+    .paperwork{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
 }
