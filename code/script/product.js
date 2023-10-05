@@ -17,19 +17,19 @@ onload = async () => {
         productImage.alt = product.name;
 
         const productName = document.getElementById("productName");
-        productName.innerText = product.name;
+        productName.innerHTML = product.name;
 
         const productPrice = document.getElementById("productPrice");
-        productPrice.innerText = `${product.price.toFormat()} €`;
+        productPrice.innerHTML = `${product.price.toFormat()} €`;
 
         const productIdButton = document.getElementById("addCart-");
         productIdButton.id = `addCart-${product.id}`;
 
         const productDescription = document.getElementById("productDescription");
-        productDescription.innerText = product.description;
+        productDescription.innerHTML = product.description;
 
         const productComposition = document.getElementById("productComposition");
-        productComposition.innerText = product.specification;
+        productComposition.innerHTML = product.specification;
 
         const loader = document.getElementById("loader");
         setTimeout(() => {
