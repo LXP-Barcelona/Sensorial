@@ -8,11 +8,8 @@ const Toast = Swal.mixin({
 })
 
 function getCartOrCreate() {
-    let cart = localStorage.getItem("cart");
-    if (!cart)
-        localStorage.setItem("cart", JSON.stringify([]));
-    cart = localStorage.getItem("cart");
-    return JSON.parse(cart);
+    const cart = localStorage.getItem("cart");
+    return JSON.parse(cart) || [];
 }
 
 function setCart(cart) {
