@@ -10,6 +10,10 @@ function getAllProducts() {
     })
 }
 
-async function findProduct(idOrName) {
-    return (await getAllProducts()).find(p => (typeof idOrName === "number" ? p.id : p.name) === idOrName );
+async function findProduct(id) {
+    return new Promise(resolve => {
+        fetch(`https://api-sensorial.vercel.app/api/product/${id}?lang=${getLang()}`).then(async r => {
+            resolve(await r.json());
+        })
+    })
 }
