@@ -18,7 +18,7 @@ https://www.figma.com/file/6eIsEeBOjoZQ7QGg1odOV5/Sensorial?type=design&node-id=
 
 Link to the API:
 ```bash
-https://api-zeta-hazel.vercel.app/api/products
+https://api-sensorial.vercel.app/api/products
 ```
 
 Link to the website:
