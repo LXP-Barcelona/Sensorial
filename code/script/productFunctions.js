@@ -4,8 +4,8 @@ Number.prototype.toFormat = function (number = null) {
 
 function getAllProducts() {
     return new Promise((resolve) => {
-        fetch("https://lxp-barcelona.github.io/Data/db.json").then(async r => {
-            resolve((await r.json())[getLang()]);
+        fetch(`https://api-sensorial.vercel.app/api/products?lang=${getLang()}`).then(async r => {
+            resolve(await r.json());
         })
     })
 }
