@@ -12,7 +12,7 @@ function getAllProducts() {
 
 async function findProduct(id) {
     return new Promise(resolve => {
-        fetch(`http://localhost:8080/api/product/${id}?lang=${getLang()}`).then(async r => {
+        fetch(`https://api-sensorial.vercel.app/api/product/${id}?lang=${getLang()}`).then(async r => {
             resolve(await r.json());
         })
     })
