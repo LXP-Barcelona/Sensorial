@@ -43,9 +43,9 @@ function askAmount(title, label, min = 1, max = 1) {
 function removeProduct(productId) {
     return new Promise(async resolve => {
         const cart = getCartOrCreate();
-        const products = await getAllProducts();
+        const productFind = (await findProduct(productId))[0];
         const product = {
-            product: products.find(p => p.id === productId),
+            product: productFind,
             amount: cart.find(p => p.id === productId)?.amount ?? 0
         };
 
@@ -97,7 +97,7 @@ function addProduct(product) {
 onclick = async (event) => {
     if (event.target.id.startsWith("addCart-")) {
         const id = parseInt(event.target.id.replace(/addCart-/, ''));
-        const product = await findProduct(id);
+        const product = (await findProduct(id))[0];
         if (product)
             addProduct(product);
     }

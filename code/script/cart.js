@@ -5,12 +5,15 @@ onload = () => {
 
 
 async function loadCart() {
-    const products = await getAllProducts();
     const cart = getCartOrCreate();
-    const myProduct = cart.map(c => ({
-        product: products.find(p => p.id === c.id),
-        amount: c.amount
-    }));
+    let myProduct = [];
+    if (cart.length > 0) {
+        const products = await findProduct(cart.map(c => c.id).join(","));
+        myProduct = cart.map(c => ({
+            amount: c.amount,
+            product: products.find(p => p.id === c.id)
+        }));
+    }
     const yourProduct = document.getElementById("yourProduct");
     const totalPrice = myProduct.reduce((total, item) => total + (item.product.price * item.amount), 0);
     const amountTotal = document.getElementById('amountTotal');

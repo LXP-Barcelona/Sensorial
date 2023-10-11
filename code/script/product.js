@@ -8,7 +8,7 @@ onload = async () => {
 
     try {
         const id = parseInt(urlParams.get('id'));
-        const product = await findProduct(id);
+        const product = (await findProduct(id))[0];
         if (!product)
             return document.location.href = 'home.html';
         

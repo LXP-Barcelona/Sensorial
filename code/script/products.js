@@ -62,7 +62,7 @@ onclick = async (event) => {
         lastActive = event.target;
     }else if (event.target.id.startsWith("addCart-")) {
         const id = parseInt(event.target.id.replace(/addCart-/, ''));
-        const product = await findProduct(id);
+        const product = (await findProduct(id))[0];
         if (product)
             addProduct(product);
     }
