@@ -33,7 +33,7 @@ async function loadCart() {
                 <strong>${product.product.price.toFormat()} €</strong>
             </div>
             <div class="productCardImage">
-                <img src="./img/remove.png" alt="remove icon" id="remove-${product.product.id}">
+                <img src="./img/update.png" alt="remove icon" id="update-${product.product.id}">
             </div>
         </div>
     </div>`
@@ -45,8 +45,9 @@ async function loadCart() {
 }
 
 onclick = async (event) => {
-    if (event.target.id.startsWith("remove-")) {
-        const id = parseInt(event.target.id.replace(/remove-/, ''));
-        removeProduct(id).then(() => loadCart())
+    if (event.target.id.startsWith("update-")) {
+        const id = parseInt(event.target.id.replace(/update-/, ''));
+        //removeProduct(id).then(() => loadCart())
+        changeAmountProduct(id).then(() => loadCart())
     }
 }

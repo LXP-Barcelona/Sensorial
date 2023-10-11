@@ -40,6 +40,52 @@ function askAmount(title, label, min = 1, max = 1) {
     })
 }
 
+function changeAmountProduct(productId) {
+    return new Promise(async resolve => {
+        const cart = getCartOrCreate();
+        const productFind = (await findProduct(productId))[0];
+        const product = {
+            product: productFind,
+            amount: cart.find(p => p.id === productId)?.amount ?? 0
+        };
+
+        Swal.fire({
+            title: `${product.product.name} x${product.amount} (${(product.amount*product.product.price).toFormat()} €)`,
+            icon: 'question',
+            input: 'range',
+            inputLabel: "label",
+            inputAttributes: {
+              min: 0,
+              max: product.amount+10,
+              step: 1
+            },
+            inputValue: product.amount,
+            didOpen: () => {
+              Swal.getInput().addEventListener('change', () => {
+                const amount = Swal.getInput().value;
+                Swal.getTitle().innerText = `${product.product.name} x${amount} (${(amount*product.product.price).toFormat()} €)`;
+              })
+            }
+        }).then(result => {
+            if (result.isConfirmed) {
+                const newAmount = parseInt(result.value);
+                if (newAmount === product.amount) return;
+                if (newAmount === 0)
+                    setCart(cart.filter(c => c.id !== productId));
+                else {
+                    cart.find(p => p.id === productId).amount = newAmount;
+                    setCart(cart);
+                }
+                Toast.fire({
+                    icon: 'success',
+                    title: `${translate("cart-update")}\nx${newAmount} ${product.product.name} (${(product.product.price*newAmount).toFormat()} €)`
+                });
+                resolve();
+            }
+          })
+    })
+}
+
 function removeProduct(productId) {
     return new Promise(async resolve => {
         const cart = getCartOrCreate();
