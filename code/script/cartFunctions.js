@@ -50,10 +50,10 @@ function changeAmountProduct(productId) {
         };
 
         Swal.fire({
-            title: `${product.product.name} x${product.amount} (${(product.amount*product.product.price).toFormat()} €)`,
+            title: `${product.product.name}`,
             icon: 'question',
             input: 'range',
-            inputLabel: "label",
+            inputLabel: `x${product.amount} (${(product.amount*product.product.price).toFormat()} €)`,
             inputAttributes: {
               min: 0,
               max: product.amount+10,
@@ -63,7 +63,7 @@ function changeAmountProduct(productId) {
             didOpen: () => {
               Swal.getInput().addEventListener('change', () => {
                 const amount = Swal.getInput().value;
-                Swal.getTitle().innerText = `${product.product.name} x${amount} (${(amount*product.product.price).toFormat()} €)`;
+                Swal.getInputLabel().innerText = `x${amount} (${(amount*product.product.price).toFormat()} €)`;
               })
             }
         }).then(result => {
