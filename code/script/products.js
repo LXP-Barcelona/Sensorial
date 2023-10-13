@@ -28,7 +28,7 @@ function showProducts(category = null) {
     productsPreviewContainer.innerHTML = products.filter(p => category ? p.category === category : true).map(product => (
         `<div class="productPreview">
         <div class="productImage"  onclick="document.location.href = 'product.html?id=${product.id}'">
-            <img src="${product.image}" alt="product">
+            <img src="${product.image}" alt="product" loading="lazy">
         </div>
         <div class="productCard">
             <div class="productInfo">
@@ -37,7 +37,7 @@ function showProducts(category = null) {
                 <strong>${product.price.toFormat()} €</strong>
             </div>
             <div class="productCardImage">
-                <img src="./img/cart.png" alt="shopping bag" id="addCart-${product.id}">
+                <img src="./img/cart.png" alt="shopping bag" id="addCart-${product.id}" loading="lazy">
             </div>
         </div>
     </div>`
