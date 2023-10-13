@@ -35,7 +35,7 @@ async function loadCart() {
                 <strong>${(product.amount*product.product.price).toFormat()} €</strong>
             </div>
             <div class="productCardImage">
-                <img src="./img/update.png" alt="remove icon" id="update-${product.product.id}">
+                <img src="./img/update.png" alt="update-cart" id="update-${product.product.id}">
             </div>
         </div>
     </div>`
@@ -49,7 +49,6 @@ async function loadCart() {
 onclick = async (event) => {
     if (event.target.id.startsWith("update-")) {
         const id = parseInt(event.target.id.replace(/update-/, ''));
-        //removeProduct(id).then(() => loadCart())
         changeAmountProduct(id).then(() => loadCart())
     }
 }

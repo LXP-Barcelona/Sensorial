@@ -89,31 +89,3 @@ section{
     box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
     transform: translateY(-2px);
 }
-
-.productImage {
-    padding-top: 10%;
-}
-
-.AmountBandContainer {
-    display: flex;
-    top: 0;
-    width: 100%;
-    z-index: 2;
-    justify-content: center;
-}
-
-.AmountBand {
-    display: flex;
-    background: #888888;
-    color: black;
-    padding: 0 25px;
-    justify-content: center;
-    align-items: center;
-    height: 25px;
-    text-align: center;
-    font-size: 15px;
-    border-bottom-left-radius: 7.5px;
-    border-bottom-right-radius: 7.5px;
-    font-weight: 700;
-    cursor: pointer;
-}
