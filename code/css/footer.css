@@ -21,6 +21,11 @@ footer{
     padding-left: 40px;
 }
 
+.brand > h1 > a {
+    text-decoration: none;
+    color: white;
+}
+
 .contact{
     padding-top: 35px;
     text-align: center;

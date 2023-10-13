@@ -14,9 +14,9 @@ async function loadProduct() {
         let id = parseInt(urlParams.get('id'));
         const maxProductCount = await getMaxProduct();
         const product = (await findProduct(id))[0];
-
         if (!product)
             return document.location.href = 'home.html';
+        document.title = `Sensorial - ${product.name}`;
         const cart = getCartOrCreate();
         const elementInCart = cart.find(c => c.id === product.id);
 

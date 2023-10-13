@@ -25,6 +25,7 @@ async function loadProducts() {
 
 function showProducts(category = null) {
     const cart = getCartOrCreate();
+    document.title = `Sensorial - ${category || 'All products'}`
     const productsPreviewContainer = document.getElementById("productsPreviewContainer");
     productsPreviewContainer.innerHTML = products.filter(p => category ? p.category === category : true).map(product => {
         const elementInCart = cart.find(c => c.id === product.id);

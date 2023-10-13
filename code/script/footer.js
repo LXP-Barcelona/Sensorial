@@ -2,7 +2,7 @@ const footerElement = document.querySelector("footer");
 
 footerElement.innerHTML =
 `
-<div class="brand"><h1>SENSORIAL</h1></div>
+<div class="brand"><h1><a href="home.html">SENSORIAL</a></h1></div>
     <div class="contact">
         <h2>CONTACT US</h2>
         <ul>
