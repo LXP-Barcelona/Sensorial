@@ -7,7 +7,8 @@ onload = async () => {
         return document.location.href = 'home.html';
 
     try {
-        const id = parseInt(urlParams.get('id'));
+        let id = parseInt(urlParams.get('id'));
+        const maxProductCount = await getMaxProduct();
         const product = (await findProduct(id))[0];
         if (!product)
             return document.location.href = 'home.html';
@@ -30,6 +31,18 @@ onload = async () => {
 
         const productComposition = document.getElementById("productComposition");
         productComposition.innerHTML = product.specification;
+
+        const productBack = document.getElementById('product-back');
+
+        productBack.onclick = () => {
+            const newId = id-1;
+            document.location.href = `product.html?id=${newId < 1 ? maxProductCount.max : newId}`;
+        }
+        const productNext = document.getElementById('product-next');
+        productNext.onclick = () => {
+            const newId = id+1;
+            document.location.href = `product.html?id=${newId > maxProductCount.max ? 1 : newId}`;
+        }
 
         const loader = document.getElementById("loader");
         setTimeout(() => {

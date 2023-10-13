@@ -33,13 +33,14 @@
     padding-top: 15px;
 }
 
-.productInfo > a {
-    margin-right: 10px;
+.productInfo > p {
+    margin: 0;
+    max-width: 95%;
 }
 
 .productImage {
     text-align: center;
-    padding-top: 49px;
+    padding-top: 10%;
 }
 
 .productImage > img {

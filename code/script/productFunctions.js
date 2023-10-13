@@ -17,3 +17,11 @@ async function findProduct(id) {
         })
     })
 }
+
+async function getMaxProduct() {
+    return new Promise(resolve => {
+        fetch("https://api-sensorial.vercel.app/api/products/info").then(async r => {
+            resolve(await r.json());
+        })
+    })
+}

@@ -21,16 +21,18 @@ async function loadCart() {
 
     yourProduct.innerHTML = myProduct.length > 0 ? `${myProduct.map(product => (
     `<div class="productPreview">
+        <div class="AmountBandContainer">
+            <div class="AmountBand">
+                x${product.amount}
+            </div>
+        </div>
         <div class="productImage" onclick="document.location.href = 'product.html?id=${product.product.id}'">
             <img src="${product.product.image}" alt="product">
         </div>
         <div class="productCard">
             <div class="productInfo">
-                <a>x${product.amount}</a>
-                <br>
-                <a>${product.product.name}</a>
-                <br>
-                <strong>${product.product.price.toFormat()} €</strong>
+                <p>${product.product.name}</p>
+                <strong>${(product.amount*product.product.price).toFormat()} €</strong>
             </div>
             <div class="productCardImage">
                 <img src="./img/update.png" alt="remove icon" id="update-${product.product.id}">

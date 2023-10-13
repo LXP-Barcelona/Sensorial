@@ -34,20 +34,23 @@
      <!--PRODUCT SECTION-->
      <section class="landingSection">
         <!--PRODUCT VIEW-->
-        <div class="productPreview">
-            <div class="productImage">
-                <img id="productImage" src="" alt="product" loading="lazy">
-            </div>
-            <div class="productCard">
-                <div class="productInfo">
-                    <a id="productName"></a>
-                    <br>
-                    <strong id="productPrice"></strong>
+        <div class="productContainer">
+            <img id="product-back" src="img/chevron-left.svg" alt="Flèche gauche" class="productArrow productArrowLeft">
+            <div class="productPreview">
+                <div class="productImage">
+                    <img id="productImage" src="" alt="product" loading="lazy">
                 </div>
-                <div class="productCardImage">
-                    <img src="./img/cart.png" alt="shopping bag" id="addCart-" loading="lazy">
+                <div class="productCard">
+                    <div class="productInfo">
+                        <p id="productName"></p>
+                        <strong id="productPrice"></strong>
+                    </div>
+                    <div class="productCardImage">
+                        <img src="./img/cart.png" alt="shopping bag" id="addCart-" loading="lazy">
+                    </div>
                 </div>
             </div>
+            <img id="product-next" src="img/chevron-right.svg" right alt="Flèche droite" class="productArrow productArrowRight">
         </div>
         <!--PRODUCT DESCRIPTION-->
         <div class="productDescription">

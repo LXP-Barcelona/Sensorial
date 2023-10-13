@@ -16,8 +16,7 @@ async function loadPreview() {
             </div>
             <div class="productCard">
                 <div class="productInfo">
-                    <a>${product.name}</a>
-                    <br>
+                    <p>${product.name}</p>
                     <strong>${product.price.toFormat()} €</strong>
                 </div>
                 <div class="productCardImage">
