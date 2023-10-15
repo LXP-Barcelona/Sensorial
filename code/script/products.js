@@ -57,7 +57,7 @@ let lastActive = null;
 
 onclick = async (event) => {
     if (event.target.id.startsWith("category.")) {
-        const category = event.target.id.replace(/category./, '').replace(/-/, ' ');
+        const category = event.target.id.replace(/category./, '').replace(/-/g, ' ');
         if (lastActive && event.target === lastActive) {
             lastActive.classList.remove('active');
             lastActive = null;
@@ -70,7 +70,7 @@ onclick = async (event) => {
         lastActive = event.target;
     }
 
-    const category = lastActive ? lastActive.id.replace(/category./, '').replace(/-/, ' ') : null;
+    const category = lastActive ? lastActive.id.replace(/category./, '').replace(/-/g, ' ') : null;
 
     if (event.target.id.startsWith("addCart-")) {
         const id = parseInt(event.target.id.replace(/addCart-/, ''));
