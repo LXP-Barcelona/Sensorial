@@ -89,3 +89,16 @@ section{
     box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
     transform: translateY(-2px);
 }
+
+/* responsive for the products preview to go from 3 to 2 columns */
+@media (max-width: 1200px) {
+    .yourProductContainer {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+/* responsive for the products preview to go from 2 to 1 columns */
+@media screen and (max-width: 768px) {
+    .yourProductContainer {
+        grid-template-columns: 1fr;
+    }
+}
