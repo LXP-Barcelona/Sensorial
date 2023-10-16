@@ -52,3 +52,27 @@ onclick = async (event) => {
         changeAmountProduct(id).then(() => loadCart())
     }
 }
+
+async function goToStripe() {
+    // Get products from localstorage.
+    const cart = getCartData();
+  
+    const body = cart.map((product) => {
+      return {
+        price: product.stripe_price_id,
+        quantity: product.quantity,
+      };
+    });
+  
+    // Connect with payment service.
+    console.log("Connecting with Payment Services...");
+    fetch("http://localhost:8080/create-checkout-session", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        window.location.href = data.url;
+      });
+  }
