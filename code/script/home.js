@@ -27,7 +27,7 @@ async function loadPreview() {
                             <strong>${product.price.toFormat()} €</strong>
                         </div>
                         <div class="productCardImage">
-                            <img src="./img/${elementInCart ? 'update' : 'cart'}.png" alt="${elementInCart ? 'update' : 'add'}-cart" id="${elementInCart ? 'update' : 'addCart'}-${product.id}" loading="lazy">
+                            <img src="./img/${elementInCart ? 'update' : 'cart'}.png" alt="${elementInCart ? 'update' : 'add'}-cart" id="${elementInCart ? 'update' : 'addCart'}-${product.id}" rel="preload">
                         </div>
                     </div>
                 </div>`

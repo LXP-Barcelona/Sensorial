@@ -27,7 +27,7 @@ async function loadCart() {
             </div>
         </div>
         <div class="productImage" onclick="document.location.href = 'product.html?id=${product.product.id}'">
-            <img src="${product.product.image}" alt="product">
+            <img src="${product.product.image}" alt="product" rel="preload">
         </div>
         <div class="productCard">
             <div class="productInfo">
@@ -35,7 +35,7 @@ async function loadCart() {
                 <strong>${(product.amount*product.product.price).toFormat()} €</strong>
             </div>
             <div class="productCardImage">
-                <img src="./img/update.png" alt="update-cart" id="update-${product.product.id}">
+                <img src="./img/update.png" alt="update-cart" id="update-${product.product.id}" rel="preload">
             </div>
         </div>
     </div>`
