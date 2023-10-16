@@ -36,7 +36,7 @@ function showProducts(category = null) {
                         </div>
                     </div>
                     <div class="productImage"  onclick="document.location.href = 'product.html?id=${product.id}'">
-                        <img src="${product.image}" alt="product" loading="lazy">
+                        <img src="${product.image}" alt="product" rel="preload">
                     </div>
                     <div class="productCard">
                         <div class="productInfo">
