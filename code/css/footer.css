@@ -14,7 +14,7 @@ footer{
 }
 
 .brand > h1{
-    font-family: Antic Didone;
+    font-family: 'Arapey';
     font-size: 50px;
     padding-top: 35px;
     text-align: left;
@@ -31,12 +31,13 @@ footer{
     text-align: center;
     align-items: center;
     margin-left: 30%;
+    font-family: 'Arapey';
 }
 
 li{
     text-decoration: none;
     list-style: none;
-    font-family: Inter;
+    font-family: 'Inter';
     font-size: 13px;
     line-height: 20px;
 }

@@ -19,6 +19,10 @@ header {
 .left-section {
     flex: 1;
     text-align: left;
+    font-family: 'Arapey';
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
 }
 
 .left-section > a {
@@ -34,10 +38,13 @@ header {
     justify-content: flex-end;
     align-items: center;
     margin-right: 40px;
+    font-family: 'Arapey';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
 }
 .cart {
     cursor: pointer;
-    font-weight: bold;
     margin-right: 10px;
 }
 .cart > a {
@@ -47,14 +54,12 @@ header {
 
 .lang {
     cursor: pointer;
-    font-weight: bold;
     margin-right: 40px;
     text-transform: uppercase;
 }
 
 .products {
     cursor: pointer;
-    font-weight: bold;
     margin-right: 40px;
 }
 .products > a {
