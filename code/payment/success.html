@@ -91,22 +91,21 @@
     </div>
 
 <script>
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    console.log(urlParams.has("id"))
-    if (!urlParams.has("id"))
-        return;
+    onload = () => {
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const id = urlParams.get('id');
+        if (!id) return;
+        console.log(id)
+        console.log(b64DecodeUnicode(id))
+        const data = JSON.parse(b64DecodeUnicode(id));
+        console.log(data)
 
-    const id = urlParams.get('id');
-    console.log(id)
-    console.log(b64DecodeUnicode(id))
-    const data = JSON.parse(b64DecodeUnicode(id));
-    console.log(data)
-
-    function b64DecodeUnicode(str) {
-        return decodeURIComponent(atob(str).split('').map(function(c) {
-            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-        }).join(''));
+        function b64DecodeUnicode(str) {
+            return decodeURIComponent(atob(str).split('').map(function(c) {
+                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+            }).join(''));
+        }
     }
 </script>
 </body>
