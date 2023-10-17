@@ -40,6 +40,12 @@ async function loadCart() {
         </div>
     </div>`
     )).join("\n")}` : translate("cart-empty");
+
+    const buyButton = document.getElementById('buy-button');
+    buyButton.addEventListener('click', () => {
+        buy();
+    })
+
     const loader = document.getElementById("loader");
     setTimeout(() => {
         loader.classList.add("hiddenLoader");
@@ -52,6 +58,29 @@ onclick = async (event) => {
         changeAmountProduct(id).then(() => loadCart())
     }
 }
+
+
+
+function buy() {
+    const cart = getCartOrCreate();
+    if (cart.length < 1) return;
+    console.log('Connecting with payment services...');
+    fetch(`https://api-sensorial.vercel.app/api/create-checkout-session`, {
+        method: 'POST',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(cart)
+    }).then((res) => res.json())
+    .then((data) => {
+      window.location.href = data.url;
+    });
+}
+
+
+
+
+
+
+
 
 async function goToStripe() {
     // Get products from localstorage.
