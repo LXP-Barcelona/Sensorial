@@ -3,8 +3,8 @@ const langs = {
         "name": "English",
         "change-lang": "You can choose another language",
 
-        "home-title": "Catch phrase",
-        "home-description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "home-title": "Smell & Relax",
+        "home-description": "Sensorial is a company dedicated to the well being of it's customers, in body and spirit, thanks to our essential oils, which not only work as a soothing fragrance, but also serves medicinal purposes. We also aim to present the best products possible to our customers, with good quality, natural and organic ingredients.",
         "home-bestSeller": "Our Best Sellers",
         "cart-remove": "You've removed",
         "cart-add": "You've added",
@@ -25,7 +25,7 @@ const langs = {
         "name": "Français",
         "change-lang": "Vous pouvez choisir une autre langue",
 
-        "home-title": "Phrase d'accroche",
+        "home-title": "Smell & Relax",
         "home-description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
         "home-bestSeller": "Nos Meilleures Ventes",
         "cart-remove": "Vous avez supprimé",
@@ -47,7 +47,7 @@ const langs = {
         "name": "Español",
         "change-lang": "Puedes elegir otro idioma",
 
-        "home-title": "Frase de presentación",
+        "home-title": "Smell & Relax",
         "home-description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
         "home-bestSeller": "Nuestros Mejores Vendedores",
         "cart-remove": "Has eliminado",

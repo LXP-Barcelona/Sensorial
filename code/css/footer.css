@@ -31,8 +31,6 @@ footer{
     text-align: center;
     align-items: center;
     margin-left: 30%;
-    font-family: 'Arapey';
-    font-weight: 400;
 }
 
 li{
@@ -88,6 +86,8 @@ li{
 
     .contact > h2{
         padding-left: 0px;
+        font-family: 'Arapey';
+        font-weight: 400;
     }
 
     .paperwork{

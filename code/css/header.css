@@ -38,10 +38,9 @@ header {
     justify-content: flex-end;
     align-items: center;
     margin-right: 40px;
-    font-family: 'Arapey';
-    font-size: 20px;
+    font-family: 'Popey', sans-serif;
+    font-size: 15px;
     font-style: normal;
-    font-weight: 400;
 }
 .cart {
     cursor: pointer;
