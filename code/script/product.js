@@ -11,7 +11,7 @@ async function loadProduct() {
         return document.location.href = 'home.html';
 
     try {
-        let id = parseInt(urlParams.get('id'));
+        const id = parseInt(urlParams.get('id'));
         const maxProductCount = await getMaxProduct();
         const product = (await findProduct(id))[0];
         if (!product)

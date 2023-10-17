@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Confirmation de commande</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            margin: 50px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .cards {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .card {
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            width: 100%;
+        }
+        .product-image {
+            flex: 1;
+        }
+        .product-image img {
+            width: 150px;
+            height: 150px;
+            display: block;
+        }
+        .product-info {
+            flex: 2;
+            padding: 20px;
+        }
+        .product-name {
+            font-size: 18px;
+            margin: 0;
+        }
+        .product-quantity {
+            font-size: 14px;
+            color: #777;
+        }
+        .product-price {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+        }
+        .total {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Confirmation de commande</h1>
+        <div class="cards">
+            <div class="card">
+                <div class="product-image">
+                    <img src="https://sensorial.vercel.app/code/img/productImg/teatree.jpg" alt="Produit 1">
+                </div>
+                <div class="product-info">
+                    <h2 class="product-name">Nom du Produit 1</h2>
+                    <p class="product-quantity">Quantité: 2</p>
+                    <p class="product-price">Prix unitaire: 20.00 €</p>
+                </div>
+            </div>
+        </div>
+        <div class="total">Total du panier : 225.00 €</div>
+    </div>
+
+<script>
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    if (!urlParams.has("id"))
+        return document.location.href = 'home.html';
+
+    try {
+        const id = urlParams.get('id');
+        const data = JSON.parse(b64DecodeUnicode(id));
+        console.log(data)
+    }catch(_) {}
+
+    function b64DecodeUnicode(str) {
+        return decodeURIComponent(atob(str).split('').map(function(c) {
+            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+        }).join(''));
+    }
+</script>
+</body>
+</html>
