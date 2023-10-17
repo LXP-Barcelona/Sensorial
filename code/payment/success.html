@@ -93,8 +93,9 @@
 <script>
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
+    console.log(urlParams.has("id"))
     if (!urlParams.has("id"))
-        return document.location.href = 'home.html';
+        return;
 
     const id = urlParams.get('id');
     console.log(id)
