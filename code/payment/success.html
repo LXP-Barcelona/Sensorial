@@ -75,19 +75,10 @@
 <body>
     <div class="container">
         <h1>Confirmation de commande</h1>
-        <div class="cards">
-            <div class="card">
-                <div class="product-image">
-                    <img src="https://sensorial.vercel.app/code/img/productImg/teatree.jpg" alt="Produit 1">
-                </div>
-                <div class="product-info">
-                    <h2 class="product-name">Nom du Produit 1</h2>
-                    <p class="product-quantity">Quantité: 2</p>
-                    <p class="product-price">Prix unitaire: 20.00 €</p>
-                </div>
-            </div>
+        <div class="cards" id="cards">
+            
         </div>
-        <div class="total">Total du panier : 225.00 €</div>
+        <div class="total" id="total"></div>
     </div>
 
 <script>
@@ -96,16 +87,28 @@
         const urlParams = new URLSearchParams(queryString);
         const id = urlParams.get('id');
         if (!id) return;
-        console.log(id)
-        console.log(b64DecodeUnicode(id))
         const data = JSON.parse(b64DecodeUnicode(id));
-        console.log(data)
+        const totalPrice = data.reduce((total, item) => total + (item.price_data.unit_amount * item.quantity), 0);
 
-        function b64DecodeUnicode(str) {
-            return decodeURIComponent(atob(str).split('').map(function(c) {
-                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-            }).join(''));
-        }
+        document.getElementById('cards').innerHTML = data.map(d => (
+            `<div class="card">
+                <div class="product-image">
+                    <img src="${d.price_data.product_data.images[0]}" alt="${d.price_data.product_data.name}">
+                </div>
+                <div class="product-info">
+                    <h2 class="product-name">${d.price_data.product_data}</h2>
+                    <p class="product-quantity">Quantity: ${d.quantity}</p>
+                    <p class="product-price">Prix unitaire: ${d.price_data.unit_amount/100} €</p>
+                </div>
+            </div>`
+        )).join("\n");
+        document.getElementById('total').innerText = `Total du panier : ${totalPrice/100} €`
+
+    }
+    function b64DecodeUnicode(str) {
+        return decodeURIComponent(atob(str).split('').map(function(c) {
+            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+        }).join(''));
     }
 </script>
 </body>
