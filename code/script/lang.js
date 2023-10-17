@@ -2,6 +2,7 @@ const langs = {
     en: {
         "name": "English",
         "change-lang": "You can choose another language",
+        "404": "Page not found",
 
         "home-title": "Catch phrase",
         "home-description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
@@ -24,6 +25,7 @@ const langs = {
     fr: {
         "name": "Français",
         "change-lang": "Vous pouvez choisir une autre langue",
+        "404": "Page non trouvée",
 
         "home-title": "Phrase d'accroche",
         "home-description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
@@ -46,6 +48,7 @@ const langs = {
     es: {
         "name": "Español",
         "change-lang": "Puedes elegir otro idioma",
+        "404": "Página no encontrada",
 
         "home-title": "Frase de presentación",
         "home-description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
