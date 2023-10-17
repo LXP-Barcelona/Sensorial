@@ -65,7 +65,7 @@ function buy() {
     const cart = getCartOrCreate();
     if (cart.length < 1) return;
     console.log('Connecting with payment services...');
-    fetch(`https://api-sensorial.vercel.app/api/create-checkout-session`, {
+    fetch(`https://api-sensorial.vercel.app/api/payment/create?lang=${getLang()}`, {
         method: 'POST',
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(cart)
