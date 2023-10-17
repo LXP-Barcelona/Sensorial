@@ -6,14 +6,13 @@ body{
     background-color: #E4E4E4;
     font-family: 'Poppins',sans-serif;
 }
+
 section{
     height: 100%;
     width: 100%;
     box-sizing:border-box;
     padding: 60px;
 }
-
-
 
 /*LANDING SECTION*/
 
@@ -54,6 +53,7 @@ section{
     grid-template-columns: 1fr 1fr 1fr; 
     grid-gap: 75px;
     width: fit-content;
+    width: -moz-fit-content;
     margin: 0 auto;
 }
 

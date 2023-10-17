@@ -2,6 +2,7 @@ const langs = {
     en: {
         "name": "English",
         "change-lang": "You can choose another language",
+        "404": "Page not found",
 
         "home-title": "Smell & Relax",
         "home-description": "Sensorial is a company dedicated to the well being of it's customers, in body and spirit, thanks to our essential oils, which not only work as a soothing fragrance, but also serves medicinal purposes. We also aim to present the best products possible to our customers, with good quality, natural and organic ingredients.",
@@ -24,6 +25,7 @@ const langs = {
     fr: {
         "name": "Français",
         "change-lang": "Vous pouvez choisir une autre langue",
+        "404": "Page non trouvée",
 
         "home-title": "Smell & Relax",
         "home-description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
@@ -46,6 +48,7 @@ const langs = {
     es: {
         "name": "Español",
         "change-lang": "Puedes elegir otro idioma",
+        "404": "Página no encontrada",
 
         "home-title": "Smell & Relax",
         "home-description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
