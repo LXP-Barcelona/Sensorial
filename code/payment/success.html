@@ -96,11 +96,11 @@
     if (!urlParams.has("id"))
         return document.location.href = 'home.html';
 
-    try {
-        const id = urlParams.get('id');
-        const data = JSON.parse(b64DecodeUnicode(id));
-        console.log(data)
-    }catch(_) {}
+    const id = urlParams.get('id');
+    console.log(id)
+    console.log(b64DecodeUnicode(id))
+    const data = JSON.parse(b64DecodeUnicode(id));
+    console.log(data)
 
     function b64DecodeUnicode(str) {
         return decodeURIComponent(atob(str).split('').map(function(c) {
