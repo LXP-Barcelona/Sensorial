@@ -28,7 +28,7 @@ const langs = {
         "404-page-not-found": "Page non trouvée",
 
         "home-title": "Smell & Relax",
-        "home-description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "home-description": "Sensorial est une société dédiée au bien-être de ses clients, aussi bien dans le corps que dans l'esprit, grâce à nos huiles essentielles, qui ne servent pas uniquement à créer des ambiances avec ses fragrances, mais également à des fins médicinales. Nous visons également à présenter le meilleur à nos clients, avec des produits de bonne qualité, naturel et à base d'ingrédients issus de l'agricologie responsable.",
         "home-bestSeller": "Nos Meilleures Ventes",
         "cart-remove": "Vous avez supprimé",
         "cart-add": "Vous avez ajouté",
@@ -51,7 +51,7 @@ const langs = {
         "404-page-not-found": "Página no encontrada",
 
         "home-title": "Smell & Relax",
-        "home-description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "home-description": "Sensorial es una compania dedicada al bienestar de sus clientes, tanto en cuerpo como en espiritu, gracias a nuestros aceites esenciales, que no solo se utilizan para crear atmosferas con sus fragrancias, sino a fines medicinales. Tambien pretendo presentar el mejor a nuestros clientes, con productos naturales, de buena calidad y elaborados con ingredientes procedentes de la agricultura responsable.",
         "home-bestSeller": "Nuestros Mejores Vendedores",
         "cart-remove": "Has eliminado",
         "cart-add": "Has añadido",
