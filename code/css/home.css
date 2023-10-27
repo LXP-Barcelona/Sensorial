@@ -38,6 +38,38 @@ section{
 
 }
 
+/*QR CODE*/
+.QRCodePreviewContainer {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.QRCode {
+    background: #D9D9D9;
+    width: 252px;
+    height: 270px;
+    border-radius: 20px;
+    cursor:auto;
+    transition: all 0.3s ease-out;
+    box-shadow: 20px 20px 60px #9375a0;
+    margin: 0 auto;
+}
+
+.QRCodeImage {
+    text-align: center;
+    padding-top: 10%;
+}
+
+.QRCode:hover {
+    transform: scale(1.04);
+}
+
+.OnirixLink{
+    text-decoration: none;
+    color: #000;
+    margin-left: 90px;
+}
 
 /*OUR BESTSELLERS SECTION*/
 
